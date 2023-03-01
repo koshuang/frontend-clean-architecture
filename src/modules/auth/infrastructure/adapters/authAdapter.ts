@@ -1,7 +1,7 @@
-import { UserName } from "../modules/core/domain/entities/user";
+import { UserName } from "../../../core/domain/entities/user";
 
-import { AuthenticationService } from "../application/ports";
-import { fakeApi } from "./api";
+import { AuthenticationService } from "../../../../application/ports";
+import { fakeApi } from "../../../core/infrastructure/adapters/api";
 
 export function useAuth(): AuthenticationService {
   return {

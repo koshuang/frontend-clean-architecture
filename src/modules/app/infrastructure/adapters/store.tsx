@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useState } from "react";
 import { useContext } from "react";
-import { cookies } from "./fakeData";
+import { cookies } from "../../../product/infrastructure/adapters/fakeData";
 
 const StoreContext = React.createContext<any>({});
 export const useStore = () => useContext(StoreContext);

@@ -2,8 +2,8 @@ import {
   CartStorageService,
   OrdersStorageService,
   UserStorageService,
-} from "../application/ports";
-import { useStore } from "./store";
+} from "../../../../application/ports";
+import { useStore } from "../../../app/infrastructure/adapters/store";
 
 // It's also possible to split the whole storage into atomic stores.
 // Inside corresponding hooks we can apply memoization, optimizations, selectors...

@@ -1,5 +1,5 @@
 import { Redirect } from "react-router";
-import { useUserStorage } from "../../../../../../adapters/storageAdapter";
+import { useUserStorage } from "../../../../../core/infrastructure/adapters/storageAdapter";
 import { Buy } from "../../../../../order/infrastructure/ui/components/Buy";
 import { Cart } from "../Cart";
 import { Orders } from "../../../../../order/infrastructure/ui/components/Orders";

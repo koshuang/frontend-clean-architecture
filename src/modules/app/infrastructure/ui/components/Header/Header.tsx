@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { useCartStorage, useUserStorage } from "../../../../../../adapters/storageAdapter";
 import styles from "./Header.module.css";
+import { useCartStorage, useUserStorage } from '../../../../../core/infrastructure/adapters/storageAdapter';
 
 export function Header() {
   const { user } = useUserStorage();

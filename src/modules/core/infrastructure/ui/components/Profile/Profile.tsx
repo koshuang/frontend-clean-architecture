@@ -1,5 +1,5 @@
 import { ingredients } from "../../../../../product/domain/entities/product";
-import { useUserStorage } from "../../../../../../adapters/storageAdapter";
+import { useUserStorage } from "../../../adapters/storageAdapter";
 
 export function Profile() {
   const { user } = useUserStorage();
