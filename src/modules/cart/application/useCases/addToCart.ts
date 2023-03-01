@@ -1,10 +1,10 @@
-import { Product } from "../modules/product/domain/entities/product";
-import { hasAllergy, User } from "../modules/core/domain/entities/user";
-import { addProduct } from "../modules/cart/domain/entities/cart";
+import { Product } from "../../../product/domain/entities/product";
+import { hasAllergy, User } from "../../../core/domain/entities/user";
+import { addProduct } from "../../domain/entities/cart";
 
-import { CartStorageService, NotificationService } from "./ports";
-import { useCartStorage } from "../adapters/storageAdapter";
-import { useNotifier } from "../adapters/notificationAdapter";
+import { CartStorageService, NotificationService } from "../../../../application/ports";
+import { useCartStorage } from "../../../../adapters/storageAdapter";
+import { useNotifier } from "../../../../adapters/notificationAdapter";
 
 export function useAddToCart() {
   const storage: CartStorageService = useCartStorage();

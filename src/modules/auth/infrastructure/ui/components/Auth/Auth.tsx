@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Redirect } from "react-router";
 
 import { UserName } from "../../../../../core/domain/entities/user";
-import { useAuthenticate } from "../../../../../../application/authenticate";
+import { useAuthenticate } from "../../../../application/useCases/authenticate";
 import styles from "./Auth.module.css";
 
 export function Auth() {

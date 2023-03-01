@@ -1,6 +1,6 @@
 import { contains } from "../../../../../cart/domain/entities/cart";
 import { Product } from "../../../../domain/entities/product";
-import { useAddToCart } from "../../../../../../application/addToCart";
+import { useAddToCart } from "../../../../../cart/application/useCases/addToCart";
 
 import { useUserStorage, useCartStorage } from "../../../../../../adapters/storageAdapter";
 import styles from "./Cookie.module.css";
