@@ -1,5 +1,5 @@
 import { Product } from "../../domain/product";
-import { useStore } from "../../services/store";
+import { useStore } from "../../adapters/store";
 import { Cookie } from "../Cookie";
 import styles from "./Front.module.css";
 

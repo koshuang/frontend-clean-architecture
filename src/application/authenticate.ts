@@ -1,6 +1,6 @@
 import { UserName } from "../domain/user";
-import { useAuth } from "../services/authAdapter";
-import { useUserStorage } from "../services/storageAdapter";
+import { useAuth } from "../adapters/authAdapter";
+import { useUserStorage } from "../adapters/storageAdapter";
 
 // Note that the port interfaces are in the _application layer_,
 // but their implementation is in the _adapter_ layer.

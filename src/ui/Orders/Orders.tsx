@@ -1,4 +1,4 @@
-import { useOrdersStorage } from "../../services/storageAdapter";
+import { useOrdersStorage } from "../../adapters/storageAdapter";
 
 export function Orders() {
   const { orders } = useOrdersStorage();

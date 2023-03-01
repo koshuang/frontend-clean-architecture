@@ -3,8 +3,8 @@ import { hasAllergy, User } from "../domain/user";
 import { addProduct } from "../domain/cart";
 
 import { CartStorageService, NotificationService } from "./ports";
-import { useCartStorage } from "../services/storageAdapter";
-import { useNotifier } from "../services/notificationAdapter";
+import { useCartStorage } from "../adapters/storageAdapter";
+import { useNotifier } from "../adapters/notificationAdapter";
 
 export function useAddToCart() {
   const storage: CartStorageService = useCartStorage();
