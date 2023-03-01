@@ -1,4 +1,4 @@
-import { User } from "../domain/entities/user";
+import { User } from "../modules/core/domain/entities/user";
 import { Cart } from "../domain/entities/cart";
 import { createOrder } from "../domain/entities/order";
 

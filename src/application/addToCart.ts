@@ -1,5 +1,5 @@
 import { Product } from "../domain/entities/product";
-import { hasAllergy, User } from "../domain/entities/user";
+import { hasAllergy, User } from "../modules/core/domain/entities/user";
 import { addProduct } from "../domain/entities/cart";
 
 import { CartStorageService, NotificationService } from "./ports";

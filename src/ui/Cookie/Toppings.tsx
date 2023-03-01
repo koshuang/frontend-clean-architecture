@@ -1,5 +1,5 @@
 import { Product, ingredients } from "../../domain/entities/product";
-import { hasAllergy, hasPreference } from "../../domain/entities/user";
+import { hasAllergy, hasPreference } from "../../modules/core/domain/entities/user";
 import { useUserStorage } from "../../adapters/storageAdapter";
 
 type ToppingsProps = {

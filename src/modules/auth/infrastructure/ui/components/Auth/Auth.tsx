@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router";
 
-import { UserName } from "../../domain/entities/user";
-import { useAuthenticate } from "../../application/authenticate";
+import { UserName } from "../../../../../core/domain/entities/user";
+import { useAuthenticate } from "../../../../../../application/authenticate";
 import styles from "./Auth.module.css";
 
 export function Auth() {
