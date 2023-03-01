@@ -1,5 +1,5 @@
-import { Cart } from "../domain/entities/cart";
-import { Order } from "../domain/entities/order";
+import { Cart } from "../modules/cart/domain/entities/cart";
+import { Order } from "../modules/order/domain/entities/order";
 import { User, UserName } from "../modules/core/domain/entities/user";
 
 export interface UserStorageService {

@@ -1,4 +1,4 @@
-import { totalPrice } from "../../../../../../domain/entities/product";
+import { totalPrice } from "../../../../../product/domain/entities/product";
 import { useCartStorage } from "../../../../../../adapters/storageAdapter";
 import { Cookie } from "../../../../../product/infrastructure/ui/components/Cookie";
 import styles from "./Cart.module.css";

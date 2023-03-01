@@ -1,7 +1,7 @@
-import { currentDatetime } from "../../lib/datetime";
-import { totalPrice } from "./product";
-import { Cart } from "./cart";
-import { User } from "../../modules/core/domain/entities/user";
+import { currentDatetime } from "../../../../lib/datetime";
+import { totalPrice } from "../../../product/domain/entities/product";
+import { Cart } from "../../../cart/domain/entities/cart";
+import { User } from "../../../core/domain/entities/user";
 
 export type OrderStatus = "new" | "delivery" | "completed";
 

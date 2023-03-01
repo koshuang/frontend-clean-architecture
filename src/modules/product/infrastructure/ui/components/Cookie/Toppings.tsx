@@ -1,4 +1,4 @@
-import { Product, ingredients } from "../../../../../../domain/entities/product";
+import { Product, ingredients } from "../../../../domain/entities/product";
 import { hasAllergy, hasPreference } from "../../../../../core/domain/entities/user";
 import { useUserStorage } from "../../../../../../adapters/storageAdapter";
 

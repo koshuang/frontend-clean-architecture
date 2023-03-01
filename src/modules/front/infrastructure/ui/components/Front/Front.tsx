@@ -1,4 +1,4 @@
-import { Product } from "../../../../../../domain/entities/product";
+import { Product } from "../../../../../product/domain/entities/product";
 import { useStore } from "../../../../../../adapters/store";
 import { Cookie } from "../../../../../product/infrastructure/ui/components/Cookie";
 import styles from "./Front.module.css";
