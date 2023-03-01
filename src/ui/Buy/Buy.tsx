@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useOrderProducts } from "../../application/orderProducts";
-import { UserName } from "../../domain/user";
+import { UserName } from "../../domain/entities/user";
 import { useCartStorage, useUserStorage } from "../../adapters/storageAdapter";
 import styles from "./Buy.module.css";
 

@@ -1,4 +1,4 @@
-import { UserName } from "../domain/user";
+import { UserName } from "../domain/entities/user";
 import { useAuth } from "../adapters/authAdapter";
 import { useUserStorage } from "../adapters/storageAdapter";
 

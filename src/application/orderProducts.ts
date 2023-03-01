@@ -1,6 +1,6 @@
-import { User } from "../domain/user";
-import { Cart } from "../domain/cart";
-import { createOrder } from "../domain/order";
+import { User } from "../domain/entities/user";
+import { Cart } from "../domain/entities/cart";
+import { createOrder } from "../domain/entities/order";
 
 // Note that the port interfaces are in the _application layer_,
 // but their implementation is in the _adapter_ layer.

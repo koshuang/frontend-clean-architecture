@@ -1,6 +1,6 @@
-import { Product } from "../domain/product";
-import { hasAllergy, User } from "../domain/user";
-import { addProduct } from "../domain/cart";
+import { Product } from "../domain/entities/product";
+import { hasAllergy, User } from "../domain/entities/user";
+import { addProduct } from "../domain/entities/cart";
 
 import { CartStorageService, NotificationService } from "./ports";
 import { useCartStorage } from "../adapters/storageAdapter";

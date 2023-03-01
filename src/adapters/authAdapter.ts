@@ -1,4 +1,4 @@
-import { UserName } from "../domain/user";
+import { UserName } from "../domain/entities/user";
 
 import { AuthenticationService } from "../application/ports";
 import { fakeApi } from "./api";
