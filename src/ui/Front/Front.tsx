@@ -1,6 +1,6 @@
 import { Product } from "../../domain/entities/product";
 import { useStore } from "../../adapters/store";
-import { Cookie } from "../Cookie";
+import { Cookie } from "../../modules/product/infrastructure/ui/components/Cookie";
 import styles from "./Front.module.css";
 
 export function Front() {

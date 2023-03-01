@@ -1,8 +1,8 @@
 import { Redirect } from "react-router";
 import { useUserStorage } from "../../adapters/storageAdapter";
-import { Buy } from "../Buy";
-import { Cart } from "../Cart";
-import { Orders } from "../Orders";
+import { Buy } from "../../modules/order/infrastructure/ui/components/Buy";
+import { Cart } from "../../modules/cart/infrastructure/ui/components/Cart";
+import { Orders } from "../../modules/order/infrastructure/ui/components/Orders";
 import { Profile } from "../../modules/core/infrastructure/ui/components/Profile";
 
 export function User() {

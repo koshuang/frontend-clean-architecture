@@ -1,8 +1,8 @@
-import { contains } from "../../domain/entities/cart";
-import { Product } from "../../domain/entities/product";
-import { useAddToCart } from "../../application/addToCart";
+import { contains } from "../../../../../../domain/entities/cart";
+import { Product } from "../../../../../../domain/entities/product";
+import { useAddToCart } from "../../../../../../application/addToCart";
 
-import { useUserStorage, useCartStorage } from "../../adapters/storageAdapter";
+import { useUserStorage, useCartStorage } from "../../../../../../adapters/storageAdapter";
 import styles from "./Cookie.module.css";
 import { Toppings } from "./Toppings";
 

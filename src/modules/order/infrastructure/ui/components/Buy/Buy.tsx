@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useOrderProducts } from "../../application/orderProducts";
-import { UserName } from "../../modules/core/domain/entities/user";
-import { useCartStorage, useUserStorage } from "../../adapters/storageAdapter";
+import { useOrderProducts } from "../../../../../../application/orderProducts";
+import { UserName } from "../../../../../core/domain/entities/user";
+import { useCartStorage, useUserStorage } from "../../../../../../adapters/storageAdapter";
 import styles from "./Buy.module.css";
 
 export function Buy() {
