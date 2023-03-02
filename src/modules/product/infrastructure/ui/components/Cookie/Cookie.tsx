@@ -2,7 +2,7 @@ import { contains } from "../../../../../cart/domain/entities/cart";
 import { Product } from "../../../../domain/entities/product";
 import { useAddToCart } from "../../../../../cart/application/useCases/addToCart";
 
-import { useUserStorage, useCartStorage } from "../../../../../core/infrastructure/adapters/storageAdapter";
+import { useUserStorage, useCartStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
 import styles from "./Cookie.module.css";
 import { Toppings } from "./Toppings";
 

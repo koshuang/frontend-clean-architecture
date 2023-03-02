@@ -1,6 +1,6 @@
 import { UserName } from "../../../core/domain/entities/user";
 import { useAuth } from "../../infrastructure/adapters/authAdapter";
-import { useUserStorage } from "../../../core/infrastructure/adapters/storageAdapter";
+import { useUserStorage } from "../../../app/infrastructure/adapters/storageAdapter";
 
 // Note that the port interfaces are in the _application layer_,
 // but their implementation is in the _adapter_ layer.

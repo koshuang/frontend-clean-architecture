@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useState } from "react";
 import { useContext } from "react";
-import { cookies } from "../../../product/infrastructure/adapters/fakeData";
 import { UserProvider, useUserStore } from '../../../core/infrastructure/adapters/store';
-export { useUserStore };
+import { ProductProvider, useProductStore } from '../../../product/infrastructure/adapters/store';
+export { useUserStore, useProductStore };
 
 const StoreContext = React.createContext<any>({});
 export const useStore = () => useContext(StoreContext);
@@ -13,7 +13,6 @@ export const Provider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const value = {
     cart,
-    cookies,
     orders,
     updateCart: setCart,
     updateOrders: setOrders,
@@ -23,7 +22,9 @@ export const Provider: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <StoreContext.Provider value={value}>
       <UserProvider>
-        {children}
+        <ProductProvider>
+          {children}
+        </ProductProvider>
       </UserProvider>
     </StoreContext.Provider>
   );

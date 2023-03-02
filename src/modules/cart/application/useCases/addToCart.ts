@@ -3,7 +3,7 @@ import { hasAllergy, User } from "../../../core/domain/entities/user";
 import { addProduct } from "../../domain/entities/cart";
 
 import { CartStorageService, NotificationService } from "../../../../application/ports";
-import { useCartStorage } from "../../../core/infrastructure/adapters/storageAdapter";
+import { useCartStorage } from "../../../app/infrastructure/adapters/storageAdapter";
 import { useNotifier } from "../../../core/infrastructure/adapters/notificationAdapter";
 
 export function useAddToCart() {

@@ -6,7 +6,7 @@ import { createOrder } from "../../../order/domain/entities/order";
 // but their implementation is in the _adapter_ layer.
 import { usePayment } from "../../../payment/infrastructure/adapters/paymentAdapter";
 import { useNotifier } from "../../../core/infrastructure/adapters/notificationAdapter";
-import { useCartStorage, useOrdersStorage } from "../../../core/infrastructure/adapters/storageAdapter";
+import { useCartStorage, useOrdersStorage } from "../../../app/infrastructure/adapters/storageAdapter";
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.
