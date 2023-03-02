@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useOrderProducts } from "../../../../../cart/application/useCases/orderProducts";
 import { UserName } from "../../../../../core/domain/entities/user";
-import { useCartStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
 import styles from "./Buy.module.css";
 import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
+import { useCartStore } from '../../../../../cart/infrastructure/adapters/store';
 
 export function Buy() {
   const { orderProducts } = useOrderProducts();
   const { user } = useUserStore();
-  const { cart } = useCartStorage();
+  const { cart } = useCartStore();
 
   const [name, setName] = useState<UserName>(user?.name ?? "");
   const [email, setEmail] = useState<Email>(user?.email ?? "");

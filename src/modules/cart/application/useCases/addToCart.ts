@@ -3,11 +3,11 @@ import { hasAllergy, User } from "../../../core/domain/entities/user";
 import { addProduct } from "../../domain/entities/cart";
 
 import { CartStorageService, NotificationService } from "../../../../application/ports";
-import { useCartStorage } from "../../../app/infrastructure/adapters/storageAdapter";
 import { useNotifier } from "../../../core/infrastructure/adapters/notificationAdapter";
+import { useCartStore } from '../../infrastructure/adapters/store';
 
 export function useAddToCart() {
-  const storage: CartStorageService = useCartStorage();
+  const storage: CartStorageService = useCartStore();
   const notifier: NotificationService = useNotifier();
 
   function addToCart(user: User, product: Product): void {
