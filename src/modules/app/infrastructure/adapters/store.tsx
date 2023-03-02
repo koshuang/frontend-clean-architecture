@@ -1,8 +1,8 @@
 import React, { PropsWithChildren, useState } from "react";
 import { useContext } from "react";
-import { UserProvider, useUserStore } from '../../../core/infrastructure/adapters/store';
+import { UserProvider } from '../../../core/infrastructure/adapters/store';
 import { ProductProvider, useProductStore } from '../../../product/infrastructure/adapters/store';
-export { useUserStore, useProductStore };
+export { useProductStore };
 
 const StoreContext = React.createContext<any>({});
 export const useStore = () => useContext(StoreContext);

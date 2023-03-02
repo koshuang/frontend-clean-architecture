@@ -2,16 +2,17 @@ import { contains } from "../../../../../cart/domain/entities/cart";
 import { Product } from "../../../../domain/entities/product";
 import { useAddToCart } from "../../../../../cart/application/useCases/addToCart";
 
-import { useUserStorage, useCartStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
+import { useCartStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
 import styles from "./Cookie.module.css";
 import { Toppings } from "./Toppings";
+import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
 
 type CookieProps = {
   cookie: Product;
 };
 
 export function Cookie({ cookie }: CookieProps) {
-  const { user } = useUserStorage();
+  const { user } = useUserStore();
   const { cart } = useCartStorage();
   const { addToCart } = useAddToCart();
 

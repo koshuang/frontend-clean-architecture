@@ -1,13 +1,13 @@
 import { Product, ingredients } from "../../../../domain/entities/product";
 import { hasAllergy, hasPreference } from "../../../../../core/domain/entities/user";
-import { useUserStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
+import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
 
 type ToppingsProps = {
   cookie: Product;
 };
 
 export function Toppings({ cookie }: ToppingsProps) {
-  const { user } = useUserStorage();
+  const { user } = useUserStore();
 
   return (
     <ul>
