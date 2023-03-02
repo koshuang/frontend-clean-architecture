@@ -3,14 +3,14 @@ import {
   OrdersStorageService,
   UserStorageService,
 } from "../../../../application/ports";
-import { useStore } from "../../../app/infrastructure/adapters/store";
+import { useStore, useUserStore } from "../../../app/infrastructure/adapters/store";
 
 // It's also possible to split the whole storage into atomic stores.
 // Inside corresponding hooks we can apply memoization, optimizations, selectors...
 // Well, you get the idea.
 
 export function useUserStorage(): UserStorageService {
-  return useStore();
+  return useUserStore();
 }
 
 export function useCartStorage(): CartStorageService {
