@@ -1,14 +1,15 @@
-import { useOrdersStorage } from "../../../../../app/infrastructure/adapters/storageAdapter";
+import { Order } from '../../../../domain/entities/order';
+import { useOrderStore } from '../../../adapters/store';
 
 export function Orders() {
-  const { orders } = useOrdersStorage();
+  const { orders } = useOrderStore();
   if (!orders.length) return null;
 
   return (
     <section>
       <h2>Orders</h2>
       <ul>
-        {orders.map((order) => (
+        {orders.map((order: Order) => (
           <li key={order.created}>
             {order.created} | {order.total / 100} ₽ | {order.status}
           </li>

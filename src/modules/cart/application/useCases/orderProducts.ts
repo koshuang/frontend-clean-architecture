@@ -6,15 +6,15 @@ import { createOrder } from "../../../order/domain/entities/order";
 // but their implementation is in the _adapter_ layer.
 import { usePayment } from "../../../payment/infrastructure/adapters/paymentAdapter";
 import { useNotifier } from "../../../core/infrastructure/adapters/notificationAdapter";
-import { useOrdersStorage } from "../../../app/infrastructure/adapters/storageAdapter";
 import { useCartStore } from '../../infrastructure/adapters/store';
+import { useOrderStore } from '../../../order/infrastructure/adapters/store';
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.
   // Here we can use hooks as a crooked “DI-container”.
   const notifier = useNotifier();
   const payment = usePayment();
-  const orderStorage = useOrdersStorage();
+  const orderStorage = useOrderStore();
   const cartStorage = useCartStore();
 
   // We can also get `user` and `cart` right here through the corresponding hooks
