@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+
+import { UserName } from '@core/domain/entities/user';
 import { useNavigate } from 'react-router-dom';
-import { UserName } from '../../../../../core/domain/entities/user';
+
 import { useAuthenticate } from '../../../../application/useCases/authenticate';
 import styles from './Auth.module.css';
 

@@ -1,4 +1,4 @@
-import { Product } from "../../../product/domain/entities/product";
+import { Product } from '@product/domain/entities/product';
 
 export type Cart = {
   products: Product[];

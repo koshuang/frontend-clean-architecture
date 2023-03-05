@@ -1,18 +1,20 @@
-import React, { useState } from "react";
-import { useOrderProducts } from "../../../../../cart/application/useCases/orderProducts";
-import { UserName } from "../../../../../core/domain/entities/user";
-import styles from "./Buy.module.css";
-import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
-import { useCartStore } from '../../../../../cart/infrastructure/adapters/store';
+import React, { useState } from 'react';
+
+import { useOrderProducts } from '@cart/application/useCases/orderProducts';
+import { useCartStore } from '@cart/infrastructure/adapters/store';
+import { UserName } from '@core/domain/entities/user';
+import { useUserStore } from '@core/infrastructure/adapters/store';
+
+import styles from './Buy.module.css';
 
 export function Buy() {
   const { orderProducts } = useOrderProducts();
   const { user } = useUserStore();
   const { cart } = useCartStore();
 
-  const [name, setName] = useState<UserName>(user?.name ?? "");
-  const [email, setEmail] = useState<Email>(user?.email ?? "");
-  const [address, setAddress] = useState("");
+  const [name, setName] = useState<UserName>(user?.name ?? '');
+  const [email, setEmail] = useState<Email>(user?.email ?? '');
+  const [address, setAddress] = useState('');
   const [loading, setLoading] = useState(false);
 
   if (!user || !cart.products.length) return null;
@@ -57,7 +59,7 @@ export function Buy() {
         </label>
 
         <button type="submit" disabled={loading}>
-          {loading ? "Preparing an order..." : "Checkout"}
+          {loading ? 'Preparing an order...' : 'Checkout'}
         </button>
       </form>
     </section>

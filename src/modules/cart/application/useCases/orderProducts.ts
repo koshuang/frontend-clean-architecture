@@ -1,13 +1,11 @@
-import { User } from "../../../core/domain/entities/user";
-import { Cart } from "../../domain/entities/cart";
-import { createOrder } from "../../../order/domain/entities/order";
+import { User } from '@core/domain/entities/user';
+import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
+import { createOrder } from '@order/domain/entities/order';
+import { useOrderStore } from '@order/infrastructure/adapters/store';
+import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
 
-// Note that the port interfaces are in the _application layer_,
-// but their implementation is in the _adapter_ layer.
-import { usePayment } from "../../../payment/infrastructure/adapters/paymentAdapter";
-import { useNotifier } from "../../../core/infrastructure/adapters/notificationAdapter";
+import { Cart } from '../../domain/entities/cart';
 import { useCartStore } from '../../infrastructure/adapters/store';
-import { useOrderStore } from '../../../order/infrastructure/adapters/store';
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.

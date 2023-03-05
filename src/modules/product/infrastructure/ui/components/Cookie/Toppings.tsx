@@ -1,6 +1,7 @@
-import { Product, ingredients } from "../../../../domain/entities/product";
-import { hasAllergy, hasPreference } from "../../../../../core/domain/entities/user";
-import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
+import { hasAllergy, hasPreference } from '@core/domain/entities/user';
+import { useUserStore } from '@core/infrastructure/adapters/store';
+
+import { Product, ingredients } from '../../../../domain/entities/product';
 
 type ToppingsProps = {
   cookie: Product;
@@ -13,8 +14,8 @@ export function Toppings({ cookie }: ToppingsProps) {
     <ul>
       {cookie.toppings.map((topping) => (
         <li key={topping}>
-          {ingredients[topping]}{" "}
-          {!!user && hasPreference(user, topping) && <>👍</>}{" "}
+          {ingredients[topping]}{' '}
+          {!!user && hasPreference(user, topping) && <>👍</>}{' '}
           {!!user && hasAllergy(user, topping) && <>⚠️</>}
         </li>
       ))}

@@ -1,11 +1,11 @@
-import { contains } from "../../../../../cart/domain/entities/cart";
-import { Product } from "../../../../domain/entities/product";
-import { useAddToCart } from "../../../../../cart/application/useCases/addToCart";
+import { useAddToCart } from '@cart/application/useCases/addToCart';
+import { contains } from '@cart/domain/entities/cart';
+import { useCartStore } from '@cart/infrastructure/adapters/store';
+import { useUserStore } from '@core/infrastructure/adapters/store';
 
-import styles from "./Cookie.module.css";
-import { Toppings } from "./Toppings";
-import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
-import { useCartStore } from '../../../../../cart/infrastructure/adapters/store';
+import { Product } from '../../../../domain/entities/product';
+import styles from './Cookie.module.css';
+import { Toppings } from './Toppings';
 
 type CookieProps = {
   cookie: Product;

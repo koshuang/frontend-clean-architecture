@@ -1,15 +1,14 @@
-import { FC, ReactElement } from 'react';
+import { FC } from 'react';
+import { Outlet } from 'react-router-dom';
+import { Header } from './Header';
 
-interface Props {
-  Header: ReactElement;
-  Main: ReactElement;
-}
+interface Props {}
 
-export const BasicLayout: FC<Props> = ({ Header, Main }) => {
+export const BasicLayout: FC<Props> = () => {
   return (
     <div className="app">
-      <>{Header}</>
-      <>{Main}</>
+      <Header />
+      <Outlet />
     </div>
   );
 };

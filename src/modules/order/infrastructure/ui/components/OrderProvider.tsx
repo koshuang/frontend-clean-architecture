@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useState } from 'react';
+
 import { OrderStoreContext } from '../../adapters/store';
 
 export const OrderProvider: React.FC<PropsWithChildren> = ({ children }) => {
@@ -10,6 +11,8 @@ export const OrderProvider: React.FC<PropsWithChildren> = ({ children }) => {
   };
 
   return (
-    <OrderStoreContext.Provider value={value}>{children}</OrderStoreContext.Provider>
+    <OrderStoreContext.Provider value={value}>
+      {children}
+    </OrderStoreContext.Provider>
   );
 };

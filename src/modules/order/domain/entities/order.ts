@@ -1,9 +1,10 @@
-import { currentDatetime } from "../../../../lib/datetime";
-import { totalPrice } from "../../../product/domain/entities/product";
-import { Cart } from "../../../cart/domain/entities/cart";
-import { User } from "../../../core/domain/entities/user";
+import { Cart } from '@cart/domain/entities/cart';
+import { User } from '@core/domain/entities/user';
+import { totalPrice } from '@product/domain/entities/product';
 
-export type OrderStatus = "new" | "delivery" | "completed";
+import { currentDatetime } from '../../../../lib/datetime';
+
+export type OrderStatus = 'new' | 'delivery' | 'completed';
 
 export type Order = {
   user: UniqueId;
@@ -17,7 +18,7 @@ export function createOrder(user: User, cart: Cart): Order {
   return {
     cart,
     user: user.id,
-    status: "new",
+    status: 'new',
     created: currentDatetime(),
     total: totalPrice(cart.products),
   };

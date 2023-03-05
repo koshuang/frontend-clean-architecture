@@ -1,4 +1,4 @@
-import { ingredients } from "../../../../../product/domain/entities/product";
+import { ingredients } from '@product/domain/entities/product';
 import { useUserStore } from '../../../adapters/store';
 
 export function Profile() {

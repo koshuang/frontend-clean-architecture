@@ -1,4 +1,5 @@
-import React, { PropsWithChildren, useState } from "react";
+import React, { PropsWithChildren, useState } from 'react';
+
 import { CartStoreContext } from '../../adapters/store';
 
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
@@ -11,6 +12,8 @@ export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
   };
 
   return (
-    <CartStoreContext.Provider value={value}>{children}</CartStoreContext.Provider>
+    <CartStoreContext.Provider value={value}>
+      {children}
+    </CartStoreContext.Provider>
   );
 };

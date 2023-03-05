@@ -1,11 +1,11 @@
-import { Product } from '../../../product/domain/entities/product';
-import { hasAllergy, User } from '../../../core/domain/entities/user';
-import { addProduct } from '../../domain/entities/cart';
+import { NotificationService } from '@core/application/ports';
+import { hasAllergy, User } from '@core/domain/entities/user';
+import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
+import { Product } from '@product/domain/entities/product';
 
-import { useNotifier } from '../../../core/infrastructure/adapters/notificationAdapter';
+import { addProduct } from '../../domain/entities/cart';
 import { useCartStore } from '../../infrastructure/adapters/store';
 import { CartStorageService } from '../ports';
-import { NotificationService } from '../../../core/application/ports';
 
 export function useAddToCart() {
   const storage: CartStorageService = useCartStore();

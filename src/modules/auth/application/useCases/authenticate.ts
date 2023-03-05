@@ -1,10 +1,7 @@
-import { UserName } from '../../../core/domain/entities/user';
+import { UserStorageService } from '@core/application/ports';
+import { UserName } from '@core/domain/entities/user';
+import { useUserStore } from '@core/infrastructure/adapters/store';
 import { useAuth } from '../../infrastructure/adapters/authAdapter';
-
-// Note that the port interfaces are in the _application layer_,
-// but their implementation is in the _adapter_ layer.
-import { useUserStore } from '../../../core/infrastructure/adapters/store';
-import { UserStorageService } from '../../../core/application/ports';
 import { AuthenticationService } from './ports';
 
 export function useAuthenticate() {

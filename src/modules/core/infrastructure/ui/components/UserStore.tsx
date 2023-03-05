@@ -1,4 +1,5 @@
 import React, { PropsWithChildren, useState } from 'react';
+
 import { UserStoreContext } from '../../adapters/store';
 
 export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
