@@ -1,5 +1,7 @@
-import { useCartStore } from '../../../../../cart/infrastructure/adapters/store';
-import { useUserStore } from '../../../../../core/infrastructure/adapters/store';
+import { Link } from 'react-router-dom';
+
+import { useCartStore } from '@cart/infrastructure/adapters/store';
+import { useUserStore } from '@core/infrastructure/adapters/store';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -8,16 +10,16 @@ export function Header() {
 
   return (
     <header className={styles.header}>
-      <a className={styles.logo} href="/">
+      <Link className={styles.logo} to="/">
         Co0o0o0o0okie!!!1 🍪
-      </a>
+      </Link>
 
       {!user ? (
-        <a href="/auth">Log in</a>
+        <Link to="/auth">Log in</Link>
       ) : (
-        <a href="/user">
+        <Link to="/user">
           {user.name} ({cart.products.length})
-        </a>
+        </Link>
       )}
     </header>
   );
