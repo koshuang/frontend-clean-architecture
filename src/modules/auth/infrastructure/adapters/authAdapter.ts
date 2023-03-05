@@ -1,7 +1,7 @@
-import { UserName } from "../../../core/domain/entities/user";
+import { UserName } from '../../../core/domain/entities/user';
 
-import { AuthenticationService } from "../../../../application/ports";
-import { fakeApi } from "../../../core/infrastructure/adapters/api";
+import { fakeApi } from '../../../core/infrastructure/adapters/api';
+import { AuthenticationService } from '../../application/useCases/ports';
 
 export function useAuth(): AuthenticationService {
   return {
@@ -9,9 +9,9 @@ export function useAuth(): AuthenticationService {
       return fakeApi({
         name,
         email,
-        id: "sample-user-id",
-        allergies: ["cocoa", "cherry"],
-        preferences: ["marshmallow", "peanuts"],
+        id: 'sample-user-id',
+        allergies: ['cocoa', 'cherry'],
+        preferences: ['marshmallow', 'peanuts'],
       });
     },
   };
