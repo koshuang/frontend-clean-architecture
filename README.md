@@ -1,6 +1,22 @@
-> Other languages: [Russian](https://github.com/bespoyasov/frontend-clean-architecture/blob/master/docs/ru.md).
 
 # Frontend Clean Architecture
+
+This is a forked version from this repository [frontend-clean-architecture](https://github.com/bespoyasov/frontend-clean-architecture).
+
+There are some extra features:
+
+- Modular structure. Attempting to have better code spliting.
+  - app: depends on all other modules
+  - core: all modules depends on core module in order to access user, notification.
+  - auth
+  - cart
+  - front
+  - order
+  - payment
+
+---
+
+> Other languages: [Russian](https://github.com/bespoyasov/frontend-clean-architecture/blob/master/docs/ru.md).
 
 A React + TypeScript example app built using the clean architecture in a functional(-ish) way.
 
