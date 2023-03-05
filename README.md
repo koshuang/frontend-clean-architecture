@@ -5,7 +5,7 @@ This is a forked version from this repository [frontend-clean-architecture](http
 
 There are some extra features:
 
-- Modular structure. Attempting to have better code spliting.
+- Modular structure and aliases. Attempting to have better code spliting.
   - app: depends on all other modules
   - core: all modules depends on core module in order to access user, notification.
   - auth
