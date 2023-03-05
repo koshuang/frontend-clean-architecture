@@ -1,6 +1,7 @@
+import { ProductItem } from '@cart/infrastructure/ui/components/ProductItem';
 import { Product } from '@product/domain/entities/product';
 import { useProductStore } from '@product/infrastructure/adapters/store';
-import { Cookie } from '@product/infrastructure/ui/components/Cookie';
+
 import styles from './Front.module.css';
 
 export function Front() {
@@ -13,7 +14,7 @@ export function Front() {
       <ul className={styles.list}>
         {cookies.map((cookie: Product) => (
           <li key={cookie.id}>
-            <Cookie cookie={cookie} />
+            <ProductItem cookie={cookie} />
           </li>
         ))}
       </ul>

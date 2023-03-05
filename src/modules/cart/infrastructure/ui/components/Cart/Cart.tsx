@@ -1,7 +1,7 @@
 import { Product, totalPrice } from '@product/domain/entities/product';
-import { Cookie } from '@product/infrastructure/ui/components/Cookie';
 
 import { useCartStore } from '../../../adapters/store';
+import { ProductItem } from '../ProductItem';
 import styles from './Cart.module.css';
 
 export function Cart() {
@@ -14,7 +14,7 @@ export function Cart() {
       <ul className={styles.list}>
         {cart.products.map((product: Product, index: number) => (
           <li key={index}>
-            <Cookie cookie={product} />
+            <ProductItem cookie={product} />
           </li>
         ))}
       </ul>
