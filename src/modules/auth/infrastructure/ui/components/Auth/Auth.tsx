@@ -1,17 +1,20 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router";
-
-import { UserName } from "../../../../../core/domain/entities/user";
-import { useAuthenticate } from "../../../../application/useCases/authenticate";
-import styles from "./Auth.module.css";
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UserName } from '../../../../../core/domain/entities/user';
+import { useAuthenticate } from '../../../../application/useCases/authenticate';
+import styles from './Auth.module.css';
 
 export function Auth() {
-  const [name, setName] = useState<UserName>("");
-  const [email, setEmail] = useState<Email>("");
+  const [name, setName] = useState<UserName>('');
+  const [email, setEmail] = useState<Email>('');
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const { user, authenticate } = useAuthenticate();
-  if (!!user) return <Redirect to="/" />;
+
+  useEffect(() => {
+    if (!!user) navigate('/');
+  }, [user, navigate]);
 
   async function handleSubmit(e: React.FormEvent) {
     setLoading(true);
@@ -44,7 +47,7 @@ export function Auth() {
       </label>
 
       <button type="submit" disabled={loading}>
-        {loading ? "Trying to login..." : "Login"}
+        {loading ? 'Trying to login...' : 'Login'}
       </button>
     </form>
   );

@@ -1,24 +1,9 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-import { Auth } from "../../../../auth/infrastructure/ui/components/Auth";
-import { User } from "../../../../cart/infrastructure/ui/components/User";
-import { Front } from "../../../../front/infrastructure/ui/components/Front";
-
-import { Header } from "./Header";
+import { BasicLayout } from './BasicLayout';
+import { Header } from './Header';
+import { Routes } from './Routes';
 
 function App() {
-  return (
-    <Router>
-      <div className="app">
-        <Header />
-        <Switch>
-          <Route path="/auth" component={Auth} />
-          <Route path="/user" component={User} />
-          <Route path="/" component={Front} />
-        </Switch>
-      </div>
-    </Router>
-  );
+  return <BasicLayout Main={<Routes />} Header={<Header />} />;
 }
 
 export default App;
