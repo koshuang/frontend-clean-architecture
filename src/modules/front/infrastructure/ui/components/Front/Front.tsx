@@ -1,7 +1,7 @@
 import { ProductItem } from '@cart/infrastructure/ui/components/ProductItem';
 import { Product } from '@product/domain/entities/product';
-import { useProductStore } from '@product/infrastructure/adapters/store';
 
+import { useProductStore } from '@product';
 import styles from './Front.module.css';
 
 export function Front() {
