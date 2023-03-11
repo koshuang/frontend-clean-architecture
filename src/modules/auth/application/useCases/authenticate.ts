@@ -1,6 +1,6 @@
 import { UserStorageService } from '@core/application/ports';
 import { UserName } from '@core/domain/entities/user';
-import { useUserStore } from '@core/infrastructure/adapters/store';
+import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import { useAuth } from '../../infrastructure/adapters/authAdapter';
 import { AuthenticationService } from './ports';
 

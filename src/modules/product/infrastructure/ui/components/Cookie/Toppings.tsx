@@ -1,6 +1,5 @@
 import { hasAllergy, hasPreference } from '@core/domain/entities/user';
-import { useUserStore } from '@core/infrastructure/adapters/store';
-
+import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import { Product, ingredients } from '../../../../domain/entities/product';
 
 type ToppingsProps = {

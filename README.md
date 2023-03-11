@@ -14,6 +14,7 @@ There are some extra features:
   - order
   - payment
 - Refactor to react-router-dom 6.X
+- Persist user and cart into local storage
 
 ---
 

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 import { useCartStore } from '@cart/infrastructure/adapters/store';
-import { useUserStore } from '@core/infrastructure/adapters/store';
+import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import styles from './Header.module.css';
 
 export function Header() {

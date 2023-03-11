@@ -1,7 +1,7 @@
 import { useAddToCart } from '@cart/application/useCases/addToCart';
 import { contains } from '@cart/domain/entities/cart';
 import { useCartStore } from '@cart/infrastructure/adapters/store';
-import { useUserStore } from '@core/infrastructure/adapters/store';
+import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import { Product } from '@product/domain/entities/product';
 import { Cookie } from '@product/infrastructure/ui/components/Cookie';
 
