@@ -1,4 +1,4 @@
-import { User } from '@core/domain/entities/user';
+import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { createOrder } from '@order/domain/entities/order';
 import { useOrderStore } from '@order/infrastructure/adapters/store';

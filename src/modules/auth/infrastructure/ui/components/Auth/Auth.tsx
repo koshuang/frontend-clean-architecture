@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { UserName } from '@core/domain/entities/user';
+import { UserName } from '@core/domain/entities/User';
 import { useNavigate } from 'react-router-dom';
 
 import { useAuthenticate } from '../../../../application/useCases/authenticate';

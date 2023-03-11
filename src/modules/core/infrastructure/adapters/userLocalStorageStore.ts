@@ -1,10 +1,10 @@
-import { User } from '../../domain/entities/user';
+import { User } from '../../domain/entities/User';
 
 class UserLocalStorageStore {
-  public user;
+  public user: User;
 
   constructor() {
-    this.user = JSON.parse(localStorage.getItem('user') as string);
+    this.user = User.create(JSON.parse(localStorage.getItem('user') as string));
   }
 
   save(user: User) {

@@ -1,5 +1,5 @@
 import { Cart } from '@cart/domain/entities/cart';
-import { User } from '@core/domain/entities/user';
+import { User } from '@core/domain/entities/User';
 import { totalPrice } from '@product/domain/entities/product';
 
 import { currentDatetime } from '../../../../lib/datetime';

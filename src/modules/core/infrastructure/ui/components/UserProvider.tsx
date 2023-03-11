@@ -5,11 +5,15 @@ import React, {
   useState,
 } from 'react';
 
-import { User } from '@core/domain/entities/user';
+import { User } from '@core/domain/entities/User';
 import { userLocalStorageStore } from '@core/infrastructure/adapters/userLocalStorageStore';
+type UserStore = {
+  user: User;
+  updateUser: () => {};
+};
 
 export const UserStoreContext = React.createContext<any>({});
-export const useUserStore = () => useContext(UserStoreContext);
+export const useUserStore = () => useContext<UserStore>(UserStoreContext);
 
 export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<User>();

@@ -1,4 +1,4 @@
-import { User } from '../domain/entities/user';
+import { User } from '../domain/entities/User';
 
 export interface UserStorageService {
   user?: User;

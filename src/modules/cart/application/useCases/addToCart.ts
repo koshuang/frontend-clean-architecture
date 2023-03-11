@@ -1,5 +1,5 @@
 import { NotificationService } from '@core/application/ports';
-import { hasAllergy, User } from '@core/domain/entities/user';
+import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { Product } from '@product/domain/entities/product';
 
@@ -13,7 +13,7 @@ export function useAddToCart() {
 
   function addToCart(user: User, product: Product): void {
     const warning = 'This cookie is dangerous to your health! 😱';
-    const isDangerous = product.toppings.some((item) => hasAllergy(user, item));
+    const isDangerous = product.toppings.some((item) => user.hasAllergy(item));
     if (isDangerous) return notifier.notify(warning);
 
     const { cart } = storage;

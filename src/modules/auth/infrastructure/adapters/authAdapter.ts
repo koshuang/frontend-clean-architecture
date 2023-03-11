@@ -1,4 +1,4 @@
-import { UserName } from '@core/domain/entities/user';
+import { User, UserName } from '@core/domain/entities/User';
 import { fakeApi } from '@core/infrastructure/adapters/api';
 
 import { AuthenticationService } from '../../application/useCases/ports';
@@ -6,13 +6,15 @@ import { AuthenticationService } from '../../application/useCases/ports';
 export function useAuth(): AuthenticationService {
   return {
     auth(name: UserName, email: Email) {
-      return fakeApi({
-        name,
-        email,
-        id: 'sample-user-id',
-        allergies: ['cocoa', 'cherry'],
-        preferences: ['marshmallow', 'peanuts'],
-      });
+      return fakeApi<User>(
+        new User(
+          name,
+          email,
+          'sample-user-id',
+          ['cocoa', 'cherry'],
+          ['marshmallow', 'peanuts']
+        )
+      );
     },
   };
 }
