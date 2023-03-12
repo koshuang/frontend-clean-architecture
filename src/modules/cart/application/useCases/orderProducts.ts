@@ -1,6 +1,6 @@
 import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
-import { createOrder } from '@order/domain/entities/order';
+import { Order } from '@order/domain/entities/Order';
 import { useOrderStore } from '@order/infrastructure/adapters/store';
 import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
 
@@ -23,7 +23,7 @@ export function useOrderProducts() {
   async function orderProducts(user: User, cart: Cart) {
     // Here we can validate the data before creating the order.
 
-    const order = createOrder(user, cart);
+    const order = Order.create(user, cart);
 
     // The use case function doesn't call third-party services directly,
     // instead, it relies on the interfaces we declared earlier.

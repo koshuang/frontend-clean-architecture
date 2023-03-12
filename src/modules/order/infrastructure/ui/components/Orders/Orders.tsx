@@ -1,4 +1,4 @@
-import { Order } from '../../../../domain/entities/order';
+import { Order } from '../../../../domain/entities/Order';
 import { useOrderStore } from '../../../adapters/store';
 
 export function Orders() {
