@@ -16,7 +16,7 @@ export function useAddToCart() {
     if (isDangerous) return notifier.notify(warning);
 
     const { cart } = storage;
-    const updated = cart.addProduct(product);
+    const updated = cart.setUserId(user.id).addProduct(product);
     storage.updateCart(updated);
   }
 
