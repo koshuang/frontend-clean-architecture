@@ -1,7 +1,5 @@
 import { Cart } from '@cart/domain/entities/Cart';
 import { User } from '@core/domain/entities/User';
-import { totalPrice } from '@product/domain/entities/product';
-
 import { currentDatetime } from '../../../../lib/datetime';
 
 export type OrderStatus = 'new' | 'delivery' | 'completed';
@@ -21,7 +19,7 @@ export class Order {
       cart,
       currentDatetime(),
       'new',
-      totalPrice(cart.products)
+      cart.totalPrice()
     );
   }
 }

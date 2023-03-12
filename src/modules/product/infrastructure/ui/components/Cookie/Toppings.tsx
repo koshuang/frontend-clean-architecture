@@ -1,5 +1,5 @@
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
-import { Product, ingredients } from '../../../../domain/entities/product';
+import { Product, ingredients } from '../../../../domain/entities/Product';
 
 type ToppingsProps = {
   cookie: Product;

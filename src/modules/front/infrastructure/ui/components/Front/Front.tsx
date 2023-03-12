@@ -1,5 +1,5 @@
 import { ProductItem } from '@cart/infrastructure/ui/components/ProductItem';
-import { Product } from '@product/domain/entities/product';
+import { Product } from '@product/domain/entities/Product';
 
 import { useProductStore } from '@product';
 import styles from './Front.module.css';

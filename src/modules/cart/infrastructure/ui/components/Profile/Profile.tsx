@@ -1,5 +1,5 @@
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
-import { ingredients } from '@product/domain/entities/product';
+import { ingredients } from '@product/domain/entities/Product';
 
 export function Profile() {
   const { user } = useUserStore();

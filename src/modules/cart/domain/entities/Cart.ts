@@ -1,4 +1,4 @@
-import { Product } from '@product/domain/entities/product';
+import { Product } from '@product/domain/entities/Product';
 
 export class Cart {
   constructor(public products: Product[] = []) {}
@@ -15,6 +15,10 @@ export class Cart {
     this.products = [...this.products, product];
 
     return this;
+  }
+
+  totalPrice(): number {
+    return this.products.reduce((total, { price }) => total + price, 0);
   }
 
   emptyCart() {

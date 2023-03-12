@@ -1,7 +1,7 @@
 import { useAddToCart } from '@cart/application/useCases/addToCart';
 import { useCartStore } from '@cart/infrastructure/adapters/store';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
-import { Product } from '@product/domain/entities/product';
+import { Product } from '@product/domain/entities/Product';
 import { Cookie } from '@product/infrastructure/ui/components/Cookie';
 
 import styles from './Cookie.module.css';

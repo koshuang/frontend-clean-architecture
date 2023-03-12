@@ -1,4 +1,4 @@
-import { Product } from '../../../../domain/entities/product';
+import { Product } from '../../../../domain/entities/Product';
 import styles from './Cookie.module.css';
 import { Toppings } from './Toppings';
 

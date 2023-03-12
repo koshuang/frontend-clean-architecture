@@ -5,7 +5,7 @@ import React, {
   useState,
 } from 'react';
 
-import { Product } from '@product/domain/entities/product';
+import { Product } from '@product/domain/entities/Product';
 import { productAdapter } from '@product/infrastructure/adapters/productAdapter';
 import { productMemoryStore } from '@product/infrastructure/adapters/productMemoryStore';
 

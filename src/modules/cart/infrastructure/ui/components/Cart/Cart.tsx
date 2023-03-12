@@ -1,4 +1,4 @@
-import { Product, totalPrice } from '@product/domain/entities/product';
+import { Product } from '@product/domain/entities/Product';
 
 import { useCartStore } from '../../../adapters/store';
 import { ProductItem } from '../ProductItem';
@@ -19,7 +19,7 @@ export function Cart() {
         ))}
       </ul>
 
-      <p>Total: {totalPrice(cart.products) / 100} ₽</p>
+      <p>Total: {cart.totalPrice() / 100} ₽</p>
     </section>
   );
 }
