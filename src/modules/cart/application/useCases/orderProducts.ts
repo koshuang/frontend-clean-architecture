@@ -2,9 +2,8 @@ import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { Order } from '@order/domain/entities/Order';
-import { useOrderStore } from '@order/infrastructure/adapters/store';
+import { useOrderStore } from '@order/infrastructure/ui/components/OrderProvider';
 import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
-
 import { Cart } from '../../domain/entities/Cart';
 
 export function useOrderProducts() {

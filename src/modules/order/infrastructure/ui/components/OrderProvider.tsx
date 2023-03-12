@@ -1,6 +1,7 @@
-import React, { PropsWithChildren, useState } from 'react';
+import React, { PropsWithChildren, useContext, useState } from 'react';
 
-import { OrderStoreContext } from '../../adapters/store';
+export const OrderStoreContext = React.createContext<any>({});
+export const useOrderStore = () => useContext(OrderStoreContext);
 
 export const OrderProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [orders, setOrders] = useState([]);

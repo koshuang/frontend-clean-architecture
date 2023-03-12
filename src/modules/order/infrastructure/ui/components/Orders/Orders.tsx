@@ -1,5 +1,5 @@
 import { Order } from '../../../../domain/entities/Order';
-import { useOrderStore } from '../../../adapters/store';
+import { useOrderStore } from '../OrderProvider';
 
 export function Orders() {
   const { orders } = useOrderStore();
