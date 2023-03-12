@@ -3,7 +3,6 @@ import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { Product } from '@product/domain/entities/product';
 
-import { addProduct } from '../../domain/entities/cart';
 import { useCartStore } from '../../infrastructure/adapters/store';
 import { CartStorageService } from '../ports';
 
@@ -17,7 +16,7 @@ export function useAddToCart() {
     if (isDangerous) return notifier.notify(warning);
 
     const { cart } = storage;
-    const updated = addProduct(cart, product);
+    const updated = cart.addProduct(product);
     storage.updateCart(updated);
   }
 

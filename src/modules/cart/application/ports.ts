@@ -1,4 +1,4 @@
-import { Cart } from '../domain/entities/cart';
+import { Cart } from '../domain/entities/Cart';
 
 export interface CartStorageService {
   cart: Cart;

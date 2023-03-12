@@ -1,4 +1,4 @@
-import { Cart } from '@cart/domain/entities/cart';
+import { Cart } from '@cart/domain/entities/Cart';
 import { User } from '@core/domain/entities/User';
 import { totalPrice } from '@product/domain/entities/product';
 

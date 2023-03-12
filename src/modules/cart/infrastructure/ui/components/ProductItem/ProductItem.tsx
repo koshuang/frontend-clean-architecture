@@ -1,5 +1,4 @@
 import { useAddToCart } from '@cart/application/useCases/addToCart';
-import { contains } from '@cart/domain/entities/cart';
 import { useCartStore } from '@cart/infrastructure/adapters/store';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import { Product } from '@product/domain/entities/product';
@@ -25,7 +24,7 @@ export function ProductItem({ cookie }: CookieProps) {
         </button>
       )}
 
-      {contains(cart, cookie) && (
+      {cart.contains(cookie) && (
         <span className={styles.contains}>In your cart</span>
       )}
     </div>

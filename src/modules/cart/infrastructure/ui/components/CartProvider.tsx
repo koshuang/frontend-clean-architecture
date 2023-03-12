@@ -1,26 +1,29 @@
 import React, { PropsWithChildren, useEffect, useState } from 'react';
 
-import { Cart } from '@cart/domain/entities/cart';
+import { Cart } from '@cart/domain/entities/Cart';
 import { cartLocalStorageStore } from '@cart/infrastructure/adapters/cartLocalStorageStore';
 import { CartStoreContext } from '../../adapters/store';
 
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [cart, setCart] = useState<Cart>({ products: [] });
+  const [cart, setCart] = useState<Cart>();
 
   useEffect(() => {
-    setCart({ products: cartLocalStorageStore.getProducts() });
+    setCart(cartLocalStorageStore.getCart());
   }, []);
 
   const value = {
     cart,
     updateCart: (cart: Cart) => {
-      cartLocalStorageStore.setProducts(cart.products);
+      cartLocalStorageStore.save(cart);
 
-      setCart({ products: cartLocalStorageStore.getProducts() });
+      setCart(cart.clone());
     },
     emptyCart: () => {
-      cartLocalStorageStore.setProducts([]);
-      setCart({ products: [] });
+      if (cart) {
+        cart.emptyCart();
+        cartLocalStorageStore.save(cart);
+        setCart(cart.clone());
+      }
     },
   };
 

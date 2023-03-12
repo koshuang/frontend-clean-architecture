@@ -1,25 +1,21 @@
-import { Cart } from '@cart/domain/entities/cart';
-import { Product } from '@product/domain/entities/product';
+import { Cart } from '@cart/domain/entities/Cart';
 
-class CartLocalStorageStore implements Cart {
-  public products: Product[] = [];
+class CartLocalStorageStore {
+  public cart: Cart = Cart.create();
 
   constructor() {
-    this.products = (JSON.parse(localStorage.getItem('cartItems') as string) ??
-      []) as Product[];
+    const cart = JSON.parse(localStorage.getItem('cart') as string);
+
+    this.cart = Cart.create(cart?.products ?? []);
   }
 
-  public getProducts() {
-    return this.products;
+  public getCart() {
+    return this.cart;
   }
 
-  public setProducts(products: Product[]) {
-    this.products = products;
-    localStorage.setItem('cartItems', JSON.stringify(products));
-
-    console.log('Cart updated', {
-      products,
-    });
+  public save(cart: Cart) {
+    this.cart = cart;
+    localStorage.setItem('cart', JSON.stringify(cart));
   }
 }
 
