@@ -1,6 +1,6 @@
 import { Product } from '@product/domain/entities/Product';
 
-import { useCartStore } from '../../../adapters/store';
+import { useCartStore } from '../CartProvider';
 import { ProductItem } from '../ProductItem';
 import styles from './Cart.module.css';
 

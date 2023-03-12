@@ -1,11 +1,18 @@
-import React, { PropsWithChildren, useEffect, useState } from 'react';
+import React, {
+  PropsWithChildren,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 import { Cart } from '@cart/domain/entities/Cart';
 import { cartLocalStorageStore } from '@cart/infrastructure/adapters/cartLocalStorageStore';
-import { CartStoreContext } from '../../adapters/store';
+
+export const CartStoreContext = React.createContext<any>({});
+export const useCartStore = () => useContext(CartStoreContext);
 
 export const CartProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [cart, setCart] = useState<Cart>();
+  const [cart, setCart] = useState<Cart>(new Cart());
 
   useEffect(() => {
     setCart(cartLocalStorageStore.getCart());

@@ -1,9 +1,9 @@
+import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { NotificationService } from '@core/application/ports';
 import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { Product } from '@product/domain/entities/Product';
 
-import { useCartStore } from '../../infrastructure/adapters/store';
 import { CartStorageService } from '../ports';
 
 export function useAddToCart() {

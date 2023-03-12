@@ -1,3 +1,4 @@
+import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
 import { Order } from '@order/domain/entities/Order';
@@ -5,7 +6,6 @@ import { useOrderStore } from '@order/infrastructure/adapters/store';
 import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
 
 import { Cart } from '../../domain/entities/Cart';
-import { useCartStore } from '../../infrastructure/adapters/store';
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.
