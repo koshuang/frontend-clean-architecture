@@ -1,10 +1,12 @@
 import { User } from '../../domain/entities/User';
 
 class UserLocalStorageStore {
-  public user: User;
+  public user: User | null;
 
   constructor() {
-    this.user = User.create(JSON.parse(localStorage.getItem('user') as string));
+    const userJson = localStorage.getItem('user') as string;
+
+    this.user = userJson ? User.create(JSON.parse(userJson)) : null;
   }
 
   save(user: User) {
@@ -16,7 +18,7 @@ class UserLocalStorageStore {
     });
   }
 
-  getUser(): User {
+  getUser(): User | null {
     return this.user;
   }
 }

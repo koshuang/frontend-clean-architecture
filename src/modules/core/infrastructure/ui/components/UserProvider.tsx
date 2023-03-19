@@ -16,7 +16,7 @@ export const UserStoreContext = React.createContext<any>({});
 export const useUserStore = () => useContext<UserStore>(UserStoreContext);
 
 export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
-  const [user, setUser] = useState<User>();
+  const [user, setUser] = useState<User | null>();
 
   useEffect(() => {
     setUser(userLocalStorageStore.getUser());

@@ -9,6 +9,10 @@ export class User {
     public allergies: Ingredient[]
   ) {}
 
+  static createEmptyUser(): User {
+    return new User(`id${new Date()}`, 'anonymous', 'test@test.com', [], []);
+  }
+
   static create(dto: any): User {
     return new User(dto.id, dto.name, dto.name, dto.preferences, dto.allergies);
   }
