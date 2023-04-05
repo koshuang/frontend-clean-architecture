@@ -3,13 +3,12 @@ import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { User } from '@core/domain/entities/User';
 import { notificationAdapter } from '@core/infrastructure/adapters/notificationAdapter';
 import { useOrderStore } from '@order/infrastructure/ui/components/OrderProvider';
-import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
+import { paymentAdapter } from '@payment/infrastructure/adapters/paymentAdapter';
 import { Cart } from '../../../domain/entities/Cart';
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.
   // Here we can use hooks as a crooked “DI-container”.
-  const payment = usePayment();
   const orderStorage = useOrderStore();
   const cartStorage = useCartStore();
 
@@ -20,7 +19,7 @@ export function useOrderProducts() {
   // which would encapsulate all input data.
   async function orderProducts(user: User, cart: Cart) {
     const useCase: OrderProductsUseCase = new OrderProductsUseCase(
-      payment,
+      paymentAdapter,
       notificationAdapter,
       cartStorage,
       orderStorage
