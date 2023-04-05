@@ -8,9 +8,9 @@ export function useAuth(): AuthenticationService {
     auth(name: UserName, email: Email) {
       return fakeApi<User>(
         new User(
+          'sample-user-id',
           name,
           email,
-          'sample-user-id',
           ['cocoa', 'cherry'],
           ['marshmallow', 'peanuts']
         )

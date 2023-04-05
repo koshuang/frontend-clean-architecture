@@ -14,7 +14,13 @@ export class User {
   }
 
   static create(dto: any): User {
-    return new User(dto.id, dto.name, dto.name, dto.preferences, dto.allergies);
+    return new User(
+      dto.id,
+      dto.name,
+      dto.email,
+      dto.preferences,
+      dto.allergies
+    );
   }
 
   hasAllergy(ingredient: Ingredient): boolean {
