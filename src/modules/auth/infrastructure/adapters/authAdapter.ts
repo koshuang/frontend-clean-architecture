@@ -3,18 +3,18 @@ import { fakeApi } from '@core/infrastructure/adapters/api';
 
 import { AuthenticationService } from '../../application/ports';
 
-export function useAuth(): AuthenticationService {
-  return {
-    auth(name: UserName, email: Email) {
-      return fakeApi<User>(
-        new User(
-          'sample-user-id',
-          name,
-          email,
-          ['cocoa', 'cherry'],
-          ['marshmallow', 'peanuts']
-        )
-      );
-    },
-  };
+class AuthAdapter implements AuthenticationService {
+  auth(name: UserName, email: Email) {
+    return fakeApi<User>(
+      new User(
+        'sample-user-id',
+        name,
+        email,
+        ['cocoa', 'cherry'],
+        ['marshmallow', 'peanuts']
+      )
+    );
+  }
 }
+
+export const authAdapter = new AuthAdapter();
