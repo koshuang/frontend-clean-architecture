@@ -1,7 +1,7 @@
 import { User } from '../domain/entities/User';
 
 export interface UserStorageService {
-  user?: User;
+  user: User | null;
   updateUser(user: User): void;
 }
 
