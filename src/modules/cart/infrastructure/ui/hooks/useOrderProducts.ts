@@ -1,10 +1,10 @@
+import { OrderProductsUseCase } from '@cart/application/useCases/OrderProductsUseCase';
 import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { User } from '@core/domain/entities/User';
 import { useNotifier } from '@core/infrastructure/adapters/notificationAdapter';
-import { Order } from '@order/domain/entities/Order';
 import { useOrderStore } from '@order/infrastructure/ui/components/OrderProvider';
 import { usePayment } from '@payment/infrastructure/adapters/paymentAdapter';
-import { Cart } from '../../domain/entities/Cart';
+import { Cart } from '../../../domain/entities/Cart';
 
 export function useOrderProducts() {
   // Usually, we access services through Dependency Injection.
@@ -20,20 +20,14 @@ export function useOrderProducts() {
   // Ideally, we would pass a command as an argument,
   // which would encapsulate all input data.
   async function orderProducts(user: User, cart: Cart) {
-    // Here we can validate the data before creating the order.
+    const useCase: OrderProductsUseCase = new OrderProductsUseCase(
+      payment,
+      notifier,
+      cartStorage,
+      orderStorage
+    );
 
-    const order = Order.create(user, cart);
-
-    // The use case function doesn't call third-party services directly,
-    // instead, it relies on the interfaces we declared earlier.
-    const paid = await payment.tryPay(order.total);
-    if (!paid) return notifier.notify("The payment wasn't successful 🤷");
-
-    // And here we can save the order on the server, if necessary.
-
-    const { orders } = orderStorage;
-    orderStorage.updateOrders([...orders, order]);
-    cartStorage.emptyCart();
+    await useCase.perform(user, cart);
   }
 
   return { orderProducts };

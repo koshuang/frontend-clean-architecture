@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 
-import { useOrderProducts } from '@cart/application/useCases/orderProducts';
 import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
 import { UserName } from '@core/domain/entities/User';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
+import { useOrderProducts } from '../../../../../cart/infrastructure/ui/hooks/useOrderProducts';
 import styles from './Buy.module.css';
 
 export function Buy() {
