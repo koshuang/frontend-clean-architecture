@@ -1,6 +1,6 @@
-import { StorageService } from '../../application/ports';
+import { KeyValueStorageService } from '../../application/ports';
 
-export class LocalStorageAdapter<T> implements StorageService<T> {
+export class LocalStorageAdapter<T> implements KeyValueStorageService<T> {
   set(key: string, value: T) {
     localStorage.setItem(key, JSON.stringify(value));
   }

@@ -1,11 +1,14 @@
-import { StorageService } from '../../application/ports';
+import {
+  KeyValueStorageService,
+  UserStoreService,
+} from '../../application/ports';
 import { User } from '../../domain/entities/User';
 import { LocalStorageAdapter } from './LocalStorageAdapter';
 
-class UserStoreAdapter {
+class UserStoreAdapter implements UserStoreService {
   public user: User | null;
 
-  constructor(private storage: StorageService<User>) {
+  constructor(private storage: KeyValueStorageService<User>) {
     this.user = User.create(storage.get('user'));
   }
 
@@ -18,7 +21,7 @@ class UserStoreAdapter {
     });
   }
 
-  getUser(): User | null {
+  get(): User | null {
     return this.user;
   }
 }

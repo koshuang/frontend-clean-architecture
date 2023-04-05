@@ -17,7 +17,7 @@ export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    setUser(userStoreAdapter.getUser());
+    setUser(userStoreAdapter.get());
   }, []);
 
   const value: UserStorageService = {
@@ -25,7 +25,7 @@ export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
     updateUser: (user: User) => {
       userStoreAdapter.save(user);
 
-      setUser(userStoreAdapter.getUser());
+      setUser(userStoreAdapter.get());
     },
   };
 
