@@ -7,7 +7,7 @@ import React, {
 
 import { Product } from '@product/domain/entities/Product';
 import { productAdapter } from '@product/infrastructure/adapters/productAdapter';
-import { productMemoryStore } from '@product/infrastructure/adapters/productMemoryStore';
+import { productsStoreAdapter } from '@product/infrastructure/adapters/productsStoreAdapter';
 
 export const ProductStoreContext = React.createContext<any>({});
 export const useProductStore = () => useContext(ProductStoreContext);
@@ -17,7 +17,7 @@ export const ProductProvider: React.FC<PropsWithChildren> = ({ children }) => {
 
   const fetchProducts = async () => {
     const products = await productAdapter.fetchProducts();
-    productMemoryStore.setProducts(products);
+    productsStoreAdapter.save(products);
     setCookies(products);
   };
 
