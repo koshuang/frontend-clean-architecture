@@ -7,7 +7,7 @@ import React, {
 
 import { UserStorageService } from '@core/application/ports';
 import { User } from '@core/domain/entities/User';
-import { userLocalStorageStore } from '@core/infrastructure/adapters/userLocalStorageStore';
+import { userStoreAdapter } from '@core/infrastructure/adapters/userStoreAdapter';
 
 export const UserStoreContext = React.createContext<any>({});
 export const useUserStore = () =>
@@ -17,15 +17,15 @@ export const UserProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
-    setUser(userLocalStorageStore.getUser());
+    setUser(userStoreAdapter.getUser());
   }, []);
 
   const value: UserStorageService = {
     user,
     updateUser: (user: User) => {
-      userLocalStorageStore.save(user);
+      userStoreAdapter.save(user);
 
-      setUser(userLocalStorageStore.getUser());
+      setUser(userStoreAdapter.getUser());
     },
   };
 

@@ -8,3 +8,8 @@ export interface UserStorageService {
 export interface NotificationService {
   notify(message: string): void;
 }
+
+export interface StorageService<T> {
+  set(key: string, value: T): void;
+  get(key: string): T | null;
+}
