@@ -1,6 +1,6 @@
 import { UserStorageService } from '@core/application/ports';
 import { UserName } from '@core/domain/entities/User';
-import { AuthenticationService } from './ports';
+import { AuthenticationService } from '../ports';
 
 export class AuthenticateUseCase {
   constructor(

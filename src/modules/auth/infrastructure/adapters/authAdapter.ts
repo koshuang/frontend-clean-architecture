@@ -1,7 +1,7 @@
 import { User, UserName } from '@core/domain/entities/User';
 import { fakeApi } from '@core/infrastructure/adapters/api';
 
-import { AuthenticationService } from '../../application/useCases/ports';
+import { AuthenticationService } from '../../application/ports';
 
 export function useAuth(): AuthenticationService {
   return {

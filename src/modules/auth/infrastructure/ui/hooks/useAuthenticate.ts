@@ -1,8 +1,8 @@
 import { UserStorageService } from '@core/application/ports';
 import { UserName } from '@core/domain/entities/User';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
+import { AuthenticationService } from '../../../application/ports';
 import { AuthenticateUseCase } from '../../../application/useCases/AuthenticateUseCase';
-import { AuthenticationService } from '../../../application/useCases/ports';
 import { useAuth } from '../../adapters/authAdapter';
 
 export function useAuthenticate() {
