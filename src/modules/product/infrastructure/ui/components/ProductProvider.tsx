@@ -5,9 +5,8 @@ import React, {
   useState,
 } from 'react';
 
+import { fetchAndStoreProductsUseCase } from '@product/application/useCases/FetchAndStoreProductsUseCase';
 import { Product } from '@product/domain/entities/Product';
-import { productAdapter } from '@product/infrastructure/adapters/productAdapter';
-import { productsStoreAdapter } from '@product/infrastructure/adapters/productsStoreAdapter';
 
 export const ProductStoreContext = React.createContext<any>({});
 export const useProductStore = () => useContext(ProductStoreContext);
@@ -16,8 +15,8 @@ export const ProductProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [cookies, setCookies] = useState<Product[]>([]);
 
   const fetchProducts = async () => {
-    const products = await productAdapter.fetchProducts();
-    productsStoreAdapter.save(products);
+    const products = await fetchAndStoreProductsUseCase.perform();
+
     setCookies(products);
   };
 
