@@ -13,7 +13,11 @@ export class User {
     return new User(`id${new Date()}`, 'anonymous', 'test@test.com', [], []);
   }
 
-  static create(dto: any): User {
+  static create(dto: any): User | null {
+    if (!dto) {
+      return null;
+    }
+
     return new User(
       dto.id,
       dto.name,
