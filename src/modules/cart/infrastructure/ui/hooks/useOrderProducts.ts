@@ -1,5 +1,5 @@
 import { OrderProductsUseCase } from '@cart/application/useCases/OrderProductsUseCase';
-import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
+import { useCartStore } from '@cart/infrastructure/ui/providers/CartProvider';
 import { User } from '@core/domain/entities/User';
 import { notificationAdapter } from '@core/infrastructure/adapters/notificationAdapter';
 import { useOrderStore } from '@order/infrastructure/ui/components/OrderProvider';

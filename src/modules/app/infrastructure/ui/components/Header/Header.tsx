@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
+import { useCartStore } from '@cart/infrastructure/ui/providers/CartProvider';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import styles from './Header.module.css';
 

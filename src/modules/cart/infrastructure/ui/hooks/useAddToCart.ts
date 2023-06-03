@@ -3,7 +3,7 @@ import { notificationAdapter } from '@core/infrastructure/adapters/notificationA
 import { Product } from '@product/domain/entities/Product';
 import { CartStorageService } from '../../../application/ports';
 import { AddToCartUseCase } from '../../../application/useCases/AddToCartUseCase';
-import { useCartStore } from '../components/CartProvider';
+import { useCartStore } from '../providers/CartProvider';
 
 export function useAddToCart() {
   const storage: CartStorageService = useCartStore();

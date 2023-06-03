@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { useCartStore } from '@cart/infrastructure/ui/components/CartProvider';
+import { useCartStore } from '@cart/infrastructure/ui/providers/CartProvider';
 import { UserName } from '@core/domain/entities/User';
 import { useUserStore } from '@core/infrastructure/ui/components/UserProvider';
 import { useOrderProducts } from '../../../../../cart/infrastructure/ui/hooks/useOrderProducts';

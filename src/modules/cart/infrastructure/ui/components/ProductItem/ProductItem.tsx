@@ -3,7 +3,7 @@ import { Product } from '@product/domain/entities/Product';
 import { Cookie } from '@product/infrastructure/ui/components/Cookie';
 
 import { useAddToCart } from '../../hooks/useAddToCart';
-import { useCartStore } from '../CartProvider';
+import { useCartStore } from '../../providers/CartProvider';
 import styles from './Cookie.module.css';
 
 type CookieProps = {
