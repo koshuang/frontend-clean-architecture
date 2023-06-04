@@ -2,11 +2,11 @@ import { NotificationService } from '@core/application/ports';
 import { User } from '@core/domain/entities/User';
 import { Product } from '@product/domain/entities/Product';
 
-import { CartStorageService } from '../ports';
+import { CartService } from '../ports';
 
 export class AddToCartUseCase {
   constructor(
-    private storage: CartStorageService,
+    private storage: CartService,
     private notifier: NotificationService
   ) {}
 

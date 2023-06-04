@@ -18,14 +18,25 @@ export function useOrderProducts() {
   // Ideally, we would pass a command as an argument,
   // which would encapsulate all input data.
   async function orderProducts(user: User, cart: Cart) {
+    if (!orderStorage) {
+      console.log(
+        'Order store is not ready. Please wrap OrderProvider into the app'
+      );
+      return;
+    }
+
     const useCase: OrderProductsUseCase = new OrderProductsUseCase(
-      paymentAdapter,
-      notificationAdapter,
       cartStorage,
-      orderStorage
+      orderStorage,
+      paymentAdapter,
+      notificationAdapter
     );
 
-    await useCase.perform(user, cart);
+    const order = await useCase.perform(user, cart);
+
+    if (!order) {
+      return;
+    }
   }
 
   return { orderProducts };
